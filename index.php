@@ -1,39 +1,23 @@
-<?php
+<!DOCTYPE html>
+<html>
 
-$categorias = ['infantil', 'adulto', 'adolescente' ];
+<head>
+    <meta charset="utf-8">
+    <title>Formulário de Inscrição</title>
+    <meta name="author" content="Umbrellios - Braulio Santos">
+    <meta name="description" content="criando formulario para inscrição com php e post">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="php, formulario, Web, Desenvolvimento, mvc">
+</head>
+<body>
 
-$nome = 'Braulio';
-$idade = 1;
+<p>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</p>
+<form action="script.php" method="POST">
+    <p>Seu Nome: <input type="text" name="nome"/></p>
+    <p>Sua Idade: <input type="text" name="idade"/></p>
+    <p><br><input type="submit" value="Inscrever"/></p>
+</form>
 
-if ($idade >= 0 && $idade <= 12)
-{
-    foreach ($categorias as $keys => $value)
-    {
-        if($value == 'infantil')
-        {
-            echo ('O nadador '.$nome.' pertence a categoria '.$value);
-        }
-    }
-}
-elseif ($idade >= 13 && $idade <= 17)
-{
-    foreach ($categorias as $keys => $value)
-    {
-        if ($value == 'adolescente')
-        {
-            echo ('O nadador '.$nome. ' pertence a categoria '. $value);
-        }
-    }
-}
-else
-{
-    foreach ($categorias as $keys => $value)
-    {
-        if ($value == 'adulto')
-        {
-            echo ('O nadador '.$nome. ' pertence a categoria '.$value);
-        }
-    }
-}
+</body>
 
-
+</html>
