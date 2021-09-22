@@ -16,23 +16,22 @@ if (empty($nome))
 {
     $_SESSION['mensagem-de-erro'] = 'O nome não pode ser vazio. Preencha-o novamente.';
     header( 'location: index.php');
-
 }
 if(strlen($nome) <3)
 {
-    echo ('O nome deve conter mais que 3 caracteres');
-    return;
+    $_SESSION['mensagem-de-erro'] = 'O nome não pode conter menos de 3 caracteres';
+    header( 'location: index.php');
 }
 if (strlen($nome) >40)
 {
-    echo ('O nome não deve conter mais que 40 caracteres');
-    return;
+    $_SESSION['mensagem-de-erro'] = 'O nome não pode conter mais de 40 caracteres';
+    header( 'location: index.php');
 }
 
 if (!is_numeric($idade))
 {
-    echo "Informe um número para idade";
-    return;
+    $_SESSION['mensagem-de-erro'] = 'A idade precisa ser um número';
+    header( 'location: index.php');
 }
 
 
