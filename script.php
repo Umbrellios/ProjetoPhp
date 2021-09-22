@@ -1,4 +1,11 @@
 <?php
+/**
+ * Creted by PhpStorm
+ * Author: Umbrellios
+ * Date: 21/09/2021
+ */
+
+session_start();
 
 $categorias = ['infantil', 'adulto', 'adolescente' ];
 
@@ -7,8 +14,9 @@ $idade = $_POST['idade'];
 
 if (empty($nome))
 {
-    echo('O nome não pode ser vazio');
-    return;
+    $_SESSION['mensagem-de-erro'] = 'O nome não pode ser vazio. Preencha-o novamente.';
+    header( 'location: index.php');
+
 }
 if(strlen($nome) <3)
 {

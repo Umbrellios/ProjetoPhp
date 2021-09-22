@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,10 +13,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="php, formulario, Web, Desenvolvimento, mvc">
 </head>
+
 <body>
 
 <p>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</p>
 <form action="script.php" method="POST">
+    <?php
+        $mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+        if(!empty($mensagemDeErro))
+        {
+            echo $mensagemDeErro;
+        }
+    ?>
     <p>Seu Nome: <input type="text" name="nome"/></p>
     <p>Sua Idade: <input type="text" name="idade"/></p>
     <p><br><input type="submit" value="Inscrever"/></p>
