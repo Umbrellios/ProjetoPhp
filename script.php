@@ -15,9 +15,15 @@ if(strlen($nome) <3)
     echo ('O nome deve conter mais que 3 caracteres');
     return;
 }
-elseif (strlen($nome) >40)
+if (strlen($nome) >40)
 {
     echo ('O nome não deve conter mais que 40 caracteres');
+    return;
+}
+
+if (!is_numeric($idade))
+{
+    echo "Informe um número para idade";
     return;
 }
 
