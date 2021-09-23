@@ -16,22 +16,26 @@ if (empty($nome))
 {
     $_SESSION['mensagem-de-erro'] = 'O nome não pode ser vazio. Preencha-o novamente.';
     header( 'location: index.php');
+    return;
 }
-if(strlen($nome) <3)
+elseif(strlen($nome) <3)
 {
     $_SESSION['mensagem-de-erro'] = 'O nome não pode conter menos de 3 caracteres';
     header( 'location: index.php');
+    return;
 }
-if (strlen($nome) >40)
+elseif (strlen($nome) >40)
 {
     $_SESSION['mensagem-de-erro'] = 'O nome não pode conter mais de 40 caracteres';
     header( 'location: index.php');
+    return;
 }
 
-if (!is_numeric($idade))
+elseif (!is_numeric($idade))
 {
     $_SESSION['mensagem-de-erro'] = 'A idade precisa ser um número';
     header( 'location: index.php');
+    return;
 }
 
 
@@ -43,7 +47,9 @@ if ($idade >= 0 && $idade <= 12)
     {
         if($value == 'infantil')
         {
-            echo ('O nadador '.$nome.' pertence a categoria '.$value);
+            $_SESSION['mensagem-de-sucesso'] = 'O nadador '.$nome.' pertence a categoria '.$value;
+            header( 'location: index.php');
+            return;
         }
     }
 }
@@ -53,7 +59,9 @@ elseif ($idade >= 13 && $idade <= 17)
     {
         if ($value == 'adolescente')
         {
-            echo ('O nadador '.$nome. ' pertence a categoria '. $value);
+            $_SESSION['mensagem-de-sucesso'] = 'O nadador '.$nome.' pertence a categoria '.$value;
+            header( 'location: index.php');
+            return;
         }
     }
 }
@@ -63,7 +71,9 @@ else
     {
         if ($value == 'adulto')
         {
-            echo ('O nadador '.$nome. ' pertence a categoria '.$value);
+            $_SESSION['mensagem-de-sucesso'] = 'O nadador '.$nome.' pertence a categoria '.$value;
+            header( 'location: index.php');
+            return;
         }
     }
 }
