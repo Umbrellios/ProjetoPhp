@@ -11,6 +11,7 @@
 
 function defineCategoriaCompetidor(string $idade, string $nome) : ?string
 {
+
     $categorias = ['infantil', 'adulto', 'adolescente' ];
     if (validaNome($nome) && validaIdade($idade))
     {

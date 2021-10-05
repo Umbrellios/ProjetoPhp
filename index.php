@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include "servicos/servicoMensagemSessao.php";
 ?>
 <!--/**-->
 <!--* Creted by PhpStorm-->
@@ -24,9 +24,16 @@
 <form action="script.php" method="POST">
     <?php
         $mensagemDeErro = obterMensagemErro();
-        echo $mensagemDeErro;
+        if(!empty($mensagemDeErro))
+        {
+            echo $mensagemDeErro;
+        }
+
         $mensagemDeSucesso = obterMensagemSucesso();
-        echo $mensagemDeSucesso;
+        if(!empty($mensagemDeSucesso))
+        {
+            echo $mensagemDeSucesso;
+        }
     ?>
     <p>Seu Nome: <input type="text" name="nome"/></p>
     <p>Sua Idade: <input type="text" name="idade"/></p>
