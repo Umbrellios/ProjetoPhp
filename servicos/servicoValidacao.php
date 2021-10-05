@@ -1,12 +1,14 @@
 <?php
 
 /**
+ *
  * Creted by PhpStorm
  * Author: Umbrellios
  * Date: 27/09/2021
+ *
  **/
 
-//declare(strict_types=1);
+
 function validaNome(string $nome) : bool
 {
     if (empty($nome))
