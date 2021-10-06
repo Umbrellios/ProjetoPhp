@@ -9,10 +9,10 @@
 
 
 
-function defineCategoriaCompetidor(string $idade, string $nome) : ?string
+function defineCategoriaCompetidor(string $nome, string $idade) : ?string
 {
-
     $categorias = ['infantil', 'adulto', 'adolescente' ];
+
     if (validaNome($nome) && validaIdade($idade))
     {
         if ($idade >= 0 && $idade <= 12)
@@ -50,11 +50,7 @@ function defineCategoriaCompetidor(string $idade, string $nome) : ?string
         }
 
     }
-    else
-    {
-        return obterMensagemErro();
-    }
-return null;
+    return obterMensagemErro();
 }
 
 
